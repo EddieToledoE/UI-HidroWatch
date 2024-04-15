@@ -25,7 +25,7 @@ const LoginComponent = () => {
       if (user) {
         console.log('Inicio de sesión exitoso:', user);
         setLoginError('');
-        router.push('/ruta-nueva');
+        router.push('/menu');
         // Aquí podrías realizar alguna acción adicional después del inicio de sesión
       } else {
         console.log('Credenciales incorrectas');

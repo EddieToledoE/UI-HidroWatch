@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@200&display=swap');
 
 .Container{
   margin: 0;
@@ -6,7 +7,7 @@
   align-items: center;
   height: 100vh; /* Cambiado de 100vw a 100vh para ocupar toda la altura de la ventana */
   padding: 0;
-  background-color: #B7B7B7;
+  background-color: #aca7d2;
   overflow: hidden;
 }
 .main-form{
