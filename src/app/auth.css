@@ -1,0 +1,109 @@
+
+.Container{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Cambiado de 100vw a 100vh para ocupar toda la altura de la ventana */
+  padding: 0;
+  background-color: #B7B7B7;
+  overflow: hidden;
+}
+.main-form{
+  height: 600px;
+  width: 1000px;
+  
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+.two-section-form{
+  display: flex;
+  height: 100%;
+  border-radius: 10px;
+  
+}
+.form-section{
+  width: 50%;
+  height: 100%;
+ 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.titulo{
+
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.titulo h3{
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 10px;
+}
+label{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ color: #667085;
+ 
+}
+.formulario{
+ 
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.inputs input{
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 4px;
+}
+.foto-main{
+  width: 50%;
+height: 100%;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid;
+border-radius: 8px;
+position: relative;
+}
+.formulario a{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #1366D9;
+}
+.formulario p{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #c22929;
+}
+.formulario button{
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 40px;
+  color: white;
+  background-color: #152310;
+}
+.formulario button:hover{
+  background-color: #203519;
+}
+.imagen-login {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen se ajusta para cubrir todo el contenedor manteniendo su relación de aspecto */
+}
+.Orquieda{
+  width: 100%;
+height: 100%;
+}
