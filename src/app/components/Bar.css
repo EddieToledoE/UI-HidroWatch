@@ -32,16 +32,18 @@
 }
 .Options{
     display: flex;
-    align-items: center;
+  
     justify-content: center;
     height:500px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
+   
    
 }
 .paginas-div{
         display: flex;
         position: relative;
+       
 }
 .Close{
     display: flex;
@@ -81,15 +83,13 @@ a{
     line-height: 50px; /* 150% */
     cursor: pointer;
     font-family: 'Inter', sans-serif;
-    margin-top: 40px;
+    margin-top: 50px;
+    transition: color 0.3s ease;
 
 }
-.Paginas-Enlaces :hover{
-    color: #45892e;
+.Paginas-Enlaces:hover{
+    color: #2e4028;
 }
-
-
-
 .Close-Enlaces{
     display: flex;
     width: 186px;

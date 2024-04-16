@@ -14,12 +14,10 @@ export default function Estadistica() {
         <Bar/>
       </div>
       <div className="Main-Second">
-
+      
         <div className="Contenedor-Clientes">
           <div className="Grafica-Contenedor">
-              <div className="AñadirStacion">
-                
-              </div>
+            
           </div>
         </div>
         

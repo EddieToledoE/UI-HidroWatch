@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import  './Bar.css';
+import HomeIcon from '@mui/icons-material/Home';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import YardOutlinedIcon from '@mui/icons-material/YardOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 function Bar() {
     const router = useRouter();
   /* const barStyles = {
@@ -22,26 +26,25 @@ function Bar() {
           <ul className="Paginas-ul">
             <li className="Paginas">
               <Link className="Paginas-Enlaces" href="/menu"> 
-                INICIO
+             <HomeOutlinedIcon style={{ fontSize: '2rem' }}></HomeOutlinedIcon>
+               Menu
               </Link>
             </li>
               <>
                 <li className="Paginas">
                   <Link className="Paginas-Enlaces" href="/inventario">
+                    < YardOutlinedIcon></YardOutlinedIcon>
                    Estaciones
                   </Link>
                 </li>
                 <li className="Paginas">
-                  <Link className="Paginas-Enlaces" href="/envios">     
-                    OPCION 3
+                  <Link className="Paginas-Enlaces" href="/envios">    
+                  <AccessTimeOutlinedIcon></AccessTimeOutlinedIcon> 
+                   Historial
                   </Link>
                 </li>
               </>
-            <li className="Paginas">
-              <Link className="Paginas-Enlaces" href="/expedientes">
-               OPCION 4
-              </Link>
-            </li>
+           
           </ul>
         </div>
       </div>
