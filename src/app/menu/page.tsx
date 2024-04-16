@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import Bar from "../components/Bar";
 import './menu.css'
 import CSSCustomization from "../components/GraficaT";
+import Inventario from "../components/detalles";
+import crearPublicacion from "../components/detalles";
+
 
 export default function Estadistica() {
   
@@ -18,7 +21,7 @@ export default function Estadistica() {
         <div className="Contenedor-Clientes">
           <div className="Grafica-Contenedor">
               <div className="AñadirStacion">
-                
+                  
               </div>
           </div>
         </div>

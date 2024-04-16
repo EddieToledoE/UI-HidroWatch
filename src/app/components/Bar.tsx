@@ -34,7 +34,7 @@ function Bar() {
                 <li className="Paginas">
                   <Link className="Paginas-Enlaces" href="/inventario">
                     < YardOutlinedIcon></YardOutlinedIcon>
-                   Estaciones
+                   Estacion
                   </Link>
                 </li>
                 <li className="Paginas">
