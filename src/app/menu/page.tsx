@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Bar from "../components/Bar";
 import './menu.css'
+import CSSCustomization from "../components/GraficaT";
 
 export default function Estadistica() {
   
@@ -21,6 +22,7 @@ export default function Estadistica() {
         </div>
         <div className="Contenedor-Envios">
           <div className="Grafica-Contenedor">
+          <CSSCustomization></CSSCustomization>
           </div>
         </div>
       </div>

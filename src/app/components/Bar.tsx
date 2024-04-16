@@ -28,8 +28,7 @@ function Bar() {
               <>
                 <li className="Paginas">
                   <Link className="Paginas-Enlaces" href="/inventario">
-                   
-                   OPCION 2
+                   Estaciones
                   </Link>
                 </li>
                 <li className="Paginas">
@@ -38,17 +37,11 @@ function Bar() {
                   </Link>
                 </li>
               </>
-            
-
             <li className="Paginas">
               <Link className="Paginas-Enlaces" href="/expedientes">
-              
                OPCION 4
               </Link>
             </li>
-
-            
-          
           </ul>
         </div>
       </div>
