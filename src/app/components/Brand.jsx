@@ -12,6 +12,7 @@ const BrandRoot = styled(Box)(() => ({
   padding: "20px 18px 20px 29px",
 }));
 
+
 const StyledSpan = styled(Span)(({ mode }) => ({
   fontSize: 18,
   marginLeft: ".5rem",
@@ -34,7 +35,7 @@ export default function Brand({ children }) {
           style={{ borderRadius: "10px" }}
         />
         <StyledSpan mode={mode} className="sidenavHoverShow">
-          Energy Watch
+          HIDROWATCH
         </StyledSpan>
       </Box>
 
