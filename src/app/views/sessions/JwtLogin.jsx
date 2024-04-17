@@ -22,35 +22,28 @@ const FlexBox = styled(Box)(() => ({
 }));
 
 const ContentBox = styled("div")(() => ({
+  borderColor: "rgba(0,0,0,0.1)",
   height: "100%",
   padding: "32px",
   position: "relative",
-  background: "rgba(0, 0, 0, 0.01)",
+  background: "linear-gradient(45deg, #311b92, #673ab7)",
 }));
 
 const StyledRoot = styled("div")(() => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#1A2038",
-  minHeight: "100% !important",
-  "& .card": {
-    maxWidth: 800,
-    minHeight: 400,
-    margin: "1rem",
-    display: "flex",
-    borderRadius: 12,
-    alignItems: "center",
-  },
+  minHeight: "100vh",
+}));
 
-  ".img-wrapper": {
-    height: "100%",
-    minWidth: 320,
-    display: "flex",
-    padding: "2rem",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+const CustomCard = styled(Card)(() => ({
+  borderColor: "#000",
+  maxWidth: 800,
+  minHeight: 400,
+  margin: "1rem",
+  display: "flex",
+  borderRadius: 12,
+  alignItems: "center",
 }));
 
 // initial login credentials
@@ -89,15 +82,15 @@ export default function JwtLogin() {
 
   return (
     <StyledRoot>
-      <Card className="card">
+      <CustomCard>
         <Grid container>
           <Grid item sm={6} xs={12}>
             <div className="img-wrapper">
               <img
-                src="/assets/images/logos/logo-energywatch.png"
+                src="/assets/images/logos/LogoH.png"
                 width="100%"
                 alt=""
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)"}}
               />
             </div>
           </Grid>
@@ -131,6 +124,9 @@ export default function JwtLogin() {
                       helperText={touched.email && errors.email}
                       error={Boolean(errors.email && touched.email)}
                       sx={{ mb: 3 }}
+                      InputProps={{
+                        style: { color: "#fff" },
+                      }}
                     />
 
                     <TextField
@@ -146,27 +142,24 @@ export default function JwtLogin() {
                       helperText={touched.password && errors.password}
                       error={Boolean(errors.password && touched.password)}
                       sx={{ mb: 1.5 }}
+                      InputProps={{
+                        style: { color: "#fff" },
+                      }}
                     />
 
-                    <FlexBox justifyContent="space-between">
-                      <FlexBox gap={1}>
+                    <FlexBox justifyContent="space-between" alignItems="center">
+                      <FlexBox gap={1} alignItems="center">
                         <Checkbox
                           size="small"
-                          name="recuerdame"
+                          name="remember"
                           onChange={handleChange}
                           checked={values.remember}
-                          sx={{ padding: 0 }}
+                          sx={{ padding: 0, color: "#fff" }}
                         />
 
-                        <Paragraph>Recuerdame </Paragraph>
+                        <Paragraph sx={{ color: "#fff" }}>Recuerdame</Paragraph>
                       </FlexBox>
 
-                      <NavLink
-                        to="/session/forgot-password"
-                        style={{ color: theme.palette.primary.main }}
-                      >
-                        ¿Contrasena olvidada?
-                      </NavLink>
                     </FlexBox>
 
                     <LoadingButton
@@ -179,12 +172,12 @@ export default function JwtLogin() {
                       Iniciar sesion
                     </LoadingButton>
 
-                    <Paragraph>
+                    <Paragraph sx={{ color: "#fff" }}>
                       ¿Tiene una cuenta?
                       <NavLink
                         to="/session/signup"
                         style={{
-                          color: theme.palette.primary.main,
+                          color: "#fff",
                           marginLeft: 5,
                         }}
                       >
@@ -197,7 +190,7 @@ export default function JwtLogin() {
             </ContentBox>
           </Grid>
         </Grid>
-      </Card>
+      </CustomCard>
     </StyledRoot>
   );
 }
