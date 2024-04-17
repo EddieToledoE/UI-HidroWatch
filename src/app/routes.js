@@ -10,6 +10,7 @@ import MatxLayout from "./components/MatxLayout/MatxLayout";
 import materialRoutes from "app/views/material-kit/MaterialRoutes";
 
 // SESSION PAGES
+
 const NotFound = Loadable(lazy(() => import("app/views/sessions/NotFound")));
 const JwtLogin = Loadable(lazy(() => import("app/views/sessions/JwtLogin")));
 const JwtRegister = Loadable(
