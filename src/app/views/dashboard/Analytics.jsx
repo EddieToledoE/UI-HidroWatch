@@ -74,26 +74,19 @@ export default function Analytics() {
     <Fragment>
       <ContentBox className="analytics">
         <Grid container spacing={3}>
-          <Grid item lg={8} md={8} sm={12} xs={12}>
-            <StatCards />
-            <TopSellingTable />
-            <StatCards2 />
-
+          <Grid alignItems={"center"} item lg={8} md={8} sm={12} xs={12}>
             <H4>Graficos en tiempo real</H4>
-
             <LineChart height="550px" />
             {/* Mostrando datos */}
-            <H4>Voltaje: {data.voltaje}V</H4>
+            <H4>Humedad: {data.voltaje}%</H4>
             <H4>Temperatura: {data.temperatura}°C</H4>
-            <H4>Corriente: {data.corriente}A</H4>
+            <H4>Nivel de Ph: {data.corriente}</H4>
+            <H4>Nivel de Agua: {data.corriente}</H4>
           </Grid>
 
           <Grid item lg={4} md={4} sm={12} xs={12}>
             <Card sx={{ px: 3, py: 2, mb: 3 }}>
-              <Title>Grafica de Monitoreo</Title>
-              <SubTitle>Tiempo real</SubTitle>
-
-              {/* <LineChart height="550px" /> */}
+              <Title>Plantulas Actuales</Title>
             </Card>
 
             <UpgradeCard />

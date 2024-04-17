@@ -48,7 +48,7 @@ const CustomCard = styled(Card)(() => ({
 
 // initial login credentials
 const initialValues = {
-  email: "jason@ui-lib.com",
+  email: "correo@upchiapas.com",
   password: "dummyPass",
   remember: true,
 };

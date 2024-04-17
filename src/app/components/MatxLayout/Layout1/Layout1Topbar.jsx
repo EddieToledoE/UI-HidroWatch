@@ -143,17 +143,7 @@ const Layout1Topbar = () => {
               </Link>
             </StyledItem>
 
-            <StyledItem>
-              <Link to="/page-layouts/user-profile">
-                <Person />
-                <Span>Perfil</Span>
-              </Link>
-            </StyledItem>
-
-            <StyledItem>
-              <Settings />
-              <Span>Ajustes</Span>
-            </StyledItem>
+            
 
             <StyledItem onClick={logout}>
               <PowerSettingsNew />
