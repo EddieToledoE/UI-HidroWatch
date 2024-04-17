@@ -50,4 +50,10 @@ export const navigations = [
     type: "extLink",
     path: "",
   },
+  {
+    name: "Guia",
+    icon: "launch",
+  
+    path: "/Informacion",
+  },
 ];

@@ -16,6 +16,9 @@ const JwtLogin = Loadable(lazy(() => import("app/views/sessions/JwtLogin")));
 const JwtRegister = Loadable(
   lazy(() => import("app/views/sessions/JwtRegister"))
 );
+const Tutorial = Loadable(
+  lazy(() => import("app/views/charts/echarts/Informacion"))
+);
 const ForgotPassword = Loadable(
   lazy(() => import("app/views/sessions/ForgotPassword"))
 );
@@ -72,6 +75,11 @@ const routes = [
       {
         path: "/charts/echartsPh",
         element: <AppEchartPh />,
+        auth: authRoles.editor,
+      },
+      {
+        path: "/informacion",
+        element: <Tutorial/>,
         auth: authRoles.editor,
       },
     ],
