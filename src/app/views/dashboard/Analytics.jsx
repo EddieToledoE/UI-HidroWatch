@@ -3,7 +3,7 @@ import { Card, Grid, styled, useTheme } from "@mui/material";
 import LineChart from "../charts/echarts/LineChart";
 import io from "socket.io-client";
 import Campaigns from "./shared/Campaigns";
-
+import TopSellingTable from "./shared/TopSellingTable";
 // STYLED COMPONENTS
 const ContentBox = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -98,8 +98,9 @@ export default function Analytics() {
                 {renderAlertMessage(latestData.level_water, 300, 599)}
               </H4>
             </Card>
-            <Card sx={{ px: 3, py: 2, mb: 3 }}>
-              <Campaigns />
+            <Card sx={{ px: 3, py: 2, mb: 3  }}>
+              <H4>PLANTULAS</H4>
+              <TopSellingTable />
             </Card>
           </Grid>
         </Grid>

@@ -49,10 +49,14 @@ export const AuthProvider = ({ children }) => {
     console.log("response", response);
     const token1 = response.data.data.token;
     const email1 = response.data.data.email;
+    const id1 = response.data.data.id;
+    const station_id1 = response.data.data.station_id;
     console.log(token1, email1);
     localStorage.setItem("jwtToken", token1); // Guardar el token en localStorage
     localStorage.setItem("user", JSON.stringify(email1)); // Guardar el usuario en localStorage
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token1}`; // Configurar el token como default para futuras peticiones
+    localStorage.setItem("id", JSON.stringify(id1));
+    localStorage.setItem("station_id", JSON.stringify(station_id1));
+    console.log("response", response);
 
     dispatch({ type: "LOGIN", payload: { email1 } });
   };

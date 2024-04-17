@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import axios from "axios"; // Asegúrate de importar axios
 import io from "socket.io-client";
+import opt from "../../../../settings.json";
+import Swal from "sweetalert2";
 
 const TextField = styled(TextValidator)(({ theme }) => ({
   width: "100%",
@@ -12,6 +14,9 @@ const TextField = styled(TextValidator)(({ theme }) => ({
 }));
 
 const SimpleForm = () => {
+
+  const [stationId, setStationId] = useState(JSON.parse(localStorage.getItem("station_id")));
+
   const [state, setState] = useState({
     ubicacion: "",
     nombre: "",
@@ -45,50 +50,49 @@ const SimpleForm = () => {
     };
   }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     try {
-      const response = await axios.post("http://localhost:4000/edificios/one", {
-        carrera: state.ubicacion,
-        nombre: state.nombre,
-        seccion: state.seccion,
+      const response = await axios.post(`${opt.protocol}://${opt.host}:${opt.port}/plants/${stationId}`, {
+        name: formData.get("nombre"),
+        amount: formData.get("cantidad"),
+        seed_time: formData.get("fecha de siembra"),
       });
-      console.log("Registro exitoso:", response.data);
-      alert("Registro exitoso");
-      // Puedes limpiar el formulario o redirigir al usuario
+      Swal.fire({
+        icon: "success",
+        title: "Se registro la planta correctamente",
+        showConfirmButton: false,
+        timer: 1500
+      })
     } catch (error) {
-      console.error("Error al registrar el edificio:", error);
+      Swal.fire({
+        icon: "error",
+        title: "No se registro la planta",
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
   };
 
-  const handleChange = (event) => {
-    event.persist();
-    setState((prev) => ({ ...prev, [event.target.name]: event.target.value }));
-  };
-
-  const { ubicacion, nombre, seccion } = state;
-
   return (
     <div>
-      <ValidatorForm onSubmit={handleSubmit} onError={() => null}>
+      <ValidatorForm onSubmit={handleSubmit}>
         <Grid container spacing={6}>
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
             <TextField
               type="text"
               name="nombre"
-              value={ubicacion}
-              onChange={handleChange}
-              errorMessages={["Este campo es obligatorio"]}
               label="Nombre"
+              errorMessages={["Este campo es obligatorio"]}
             />
 
             <TextField
               type="number"
               name="cantidad"
               label="Cantidad de plantulas"
-              onChange={handleChange}
-              value={nombre}
-              validators={["required"]}
               errorMessages={["Este campo es obligatorio"]}
             />
 
@@ -96,10 +100,9 @@ const SimpleForm = () => {
               type="date"
               name="fecha de siembra"
               label="Fecha de siembra"
-              value={seccion}
-              onChange={handleChange}
-              validators={["required"]}
               errorMessages={["Este campo es obligatorio"]}
+              InputLabelProps={{ shrink: true }}
+              InputProps={{ placeholder: ' ' }}
             />
 
           </Grid>
