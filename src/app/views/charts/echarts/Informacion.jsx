@@ -89,6 +89,7 @@ Acceso a vegetales frescos: La hidroponía hace que determinadas poblaciones acc
 
 
       </SimpleCard>
+      
     </Container>
   );
 }
