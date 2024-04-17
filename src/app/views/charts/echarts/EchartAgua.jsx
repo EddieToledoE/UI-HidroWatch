@@ -4,7 +4,7 @@ import Breadcrumb from "app/components/Breadcrumb";
 import SimpleCard from "app/components/SimpleCard";
 
 import AreaChart from "./AreaChart";
-import LineChart from "./LineT";
+import LineChart from "./LineA";
 import DoughnutChart from "./Doughnut";
 import ComparisonChart from "./ComparisonChart";
 
@@ -23,7 +23,8 @@ export default function AppEchart() {
 
   return (
     <Container>
-      <h1>TEMPERATURA</h1>
+      <h1>NIVEL DE AGUA</h1>
+
 
       <Box sx={{ py: "12px" }} />
 
@@ -32,7 +33,6 @@ export default function AppEchart() {
           height="350px"
           color={[theme.palette.primary.main, theme.palette.primary.light]}
         />
-
       </SimpleCard>
 
       <Box sx={{ py: "12px" }} />

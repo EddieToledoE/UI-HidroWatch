@@ -8,14 +8,14 @@ export const navigations = [
     name: "Graficas",
     icon: "chart",
     children: [
-      { name: "Temperatura", iconText: "T", path: "/session/signin" },
-      { name: "Humedad", iconText: "H", path: "/session/signup" },
+      { name: "Temperatura", iconText: "T", path: "/charts/echartsTemperatura" },
+      { name: "Humedad", iconText: "H", path: "/charts/echartsHumedad" },
       {
         name: "Ph",
         iconText: "PH",
-        path: "/session/forgot-password",
+        path: "/charts/echartsPh",
       },
-      { name: "Agua", iconText: "A", path: "/session/404" },
+      { name: "Agua", iconText: "A", path: "/charts/echartsAgua" },
     ],
   },
   // {
@@ -39,9 +39,6 @@ export const navigations = [
   //     // { name: "Table", path: "/material/table", iconText: "T" }
   //   ],
   // },
-  { name: "Temperatura", path: "/charts/echarts", iconText: "T" },
-  { name: "Voltaje", path: "/charts/echartsV", iconText: "V" },
-  { name: "Corriente", path: "/charts/echartsC", iconText: "C" },
   // {
   //   name: "Charts",
   //   icon: "trending_up",

@@ -6,21 +6,25 @@ import io from "socket.io-client";
 export default function LineChart({ height }) {
   const theme = useTheme();
   const [data, setData] = useState({
-    voltaje: [],
+    humedad: [],
     temperatura: [],
-    corriente: [],
+    level_water: [],
+    nivel_ph: [],
   });
 
   useEffect(() => {
-    const socket = io("http://localhost:5555"); // Cambia esto por la URL de tu servidor WebSocket
+    const socket = io("https://ws-hw.onrender.com"); // Cambia esto por la URL de tu servidor WebSocket
     socket.on("IncomingData", (msg) => {
-      const { topic, message } = msg;
+      console.log(msg);
+      const { user, humedad, temperatura, level_water, nivel_ph } = JSON.parse(
+        msg.message
+      );
       setData((prevData) => ({
         ...prevData,
-        [topic.split("/")[1]]: [
-          ...prevData[topic.split("/")[1]],
-          parseFloat(message),
-        ],
+        humedad: [...prevData.humedad, humedad],
+        temperatura: [...prevData.temperatura, temperatura],
+        level_water: [...prevData.level_water, level_water],
+        nivel_ph: [...prevData.nivel_ph, nivel_ph],
       }));
     });
 
@@ -42,7 +46,7 @@ export default function LineChart({ height }) {
     },
     xAxis: {
       type: "category",
-      data: data.voltaje.map((_, index) => index),
+      data: data.humedad.map((_, index) => index),
       axisLine: { show: false },
       axisTick: { show: false },
       axisLabel: {

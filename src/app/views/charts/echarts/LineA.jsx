@@ -70,33 +70,9 @@ export default function LineChart({ height }) {
     },
     series: [
       {
-        data: data.humedad,
-        type: "line",
-        name: "Humedad",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
-      {
-        data: data.temperatura,
-        type: "line",
-        name: "Temperatura",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
-      {
         data: data.level_water,
         type: "line",
         name: "Nivel de Agua",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
-      {
-        data: data.nivel_ph,
-        type: "line",
-        name: "Nivel de pH",
         smooth: true,
         symbolSize: 4,
         lineStyle: { width: 4 },
