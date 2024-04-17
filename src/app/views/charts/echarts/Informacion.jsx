@@ -2,7 +2,6 @@ import { Box, styled, useTheme } from "@mui/material";
 
 import Breadcrumb from "app/components/Breadcrumb";
 import SimpleCard from "app/components/SimpleCard";
-
 import AreaChart from "./AreaChart";
 import LineChart from "./LineH";
 import DoughnutChart from "./Doughnut";
@@ -89,7 +88,45 @@ Acceso a vegetales frescos: La hidroponía hace que determinadas poblaciones acc
 
 
       </SimpleCard>
-      
+      <Box sx={{ py: "12px" }} />
+<SimpleCard>
+<h2>Algunas Hortalizas</h2>
+
+<h3>FRESA</h3>
+
+<p>Para el cultivo de fresas, es crucial el manejo de la solución nutritiva. Se recomienda mantener el pH del agua entre 5.5 y 6.5, y el nivel de oxígeno por encima de 3 ppm. Además, es importante controlar la salinidad, ya que las fresas son sensibles a ella, y su crecimiento óptimo se da en soluciones nutritivas de 1.0 a 2.0 dS/m.</p>
+
+<p>Las fresas se cultivan mejor a partir de portainjertos en lugar de semilla. El crecimiento vegetativo, a través de corredores, es mucho más rápido que la reproducción sexual mediante semillas, lo que permite reducir significativamente el tiempo de siembra a producción.</p>
+
+<p>Es importante tener en cuenta que las fresas son propensas a plagas y enfermedades. Se recomienda el uso de acaricidas para manejar ácaros, así como un baño de fungicida antes de plantar para prevenir infecciones fúngicas.</p>
+
+<h4>Recomendaciones específicas:</h4>
+
+<ul>
+  <li><strong>Plantación:</strong> La germinación a partir de semillas es muy difícil, por lo que se recomienda la propagación desde el clon, que es más rápida y fácil.</li>
+  <li><strong>Cosecha:</strong> Las cosechas múltiples son comunes a través de la poda, lo que permite prolongar el ciclo de producción de las fresas.</li>
+</ul>
+
+</SimpleCard>
+<Box sx={{ py: "12px" }} />
+<SimpleCard>
+<ul>
+  <li>
+    <strong>LECHUGAS</strong>
+    <p>(Las distintas especies de lechuga son compatibles en un sistema hidropónico)</p>
+    <p>La lechuga es uno de los cultivos más populares en el mundo. La cosecha de clima fresco crece dulce y tierna, un complemento perfecto para cualquier plato fresco. La lechuga crece bien en casi cualquier sistema de jardinería, ya sean Jardines hidropónicos, aeropónicos o de suelo tradicional. Ocupa relativamente poco espacio, tiene un corto (5-6 semanas desde el trasplante o 9-11 semanas desde la semilla) ciclo de crecimiento cuando está saludable, y siempre hay una gran demanda en el mercado.</p>
+    <ul>
+      <li><strong>Plantación:</strong> Germinar desde semilla</li>
+      <li><strong>Cosecha:</strong> Se cosecha la cabeza completa (planta completa)</li>
+      <li><strong>Rango de pH:</strong> 5.5-6.5</li>
+      <li><strong>CE/PPM:</strong> 1.0-1.6 / 500-800</li>
+      <li><strong>Iluminación:</strong> 14-18 horas</li>
+      <li><strong>Rango de Temperatura:</strong> 7.22–23.89°C Ideal: 18.3°C</li>
+    </ul>
+  </li>
+</ul>
+
+</SimpleCard>
     </Container>
   );
 }
