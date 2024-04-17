@@ -87,6 +87,7 @@ Acceso a vegetales frescos: La hidroponía hace que determinadas poblaciones acc
 <p><strong>Control del pH:</strong></p>
 <p>Este paso es más relevante para sistemas más complejos y puede requerir el uso de herramientas para medir y ajustar el pH de la solución nutritiva.</p>
 
+
       </SimpleCard>
     </Container>
   );
