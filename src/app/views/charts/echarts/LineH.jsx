@@ -77,30 +77,6 @@ export default function LineChart({ height }) {
         symbolSize: 4,
         lineStyle: { width: 4 },
       },
-      {
-        data: data.temperatura,
-        type: "line",
-        name: "Temperatura",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
-      {
-        data: data.level_water,
-        type: "line",
-        name: "Nivel de Agua",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
-      {
-        data: data.nivel_ph,
-        type: "line",
-        name: "Nivel de pH",
-        smooth: true,
-        symbolSize: 4,
-        lineStyle: { width: 4 },
-      },
     ],
   };
 

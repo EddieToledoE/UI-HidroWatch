@@ -4,7 +4,7 @@ import Breadcrumb from "app/components/Breadcrumb";
 import SimpleCard from "app/components/SimpleCard";
 
 import AreaChart from "./AreaChart";
-import LineChart from "./LineChart";
+import LineChart from "./LineP";
 import DoughnutChart from "./Doughnut";
 import ComparisonChart from "./ComparisonChart";
 
@@ -23,15 +23,7 @@ export default function AppEchart() {
 
   return (
     <Container>
-      <h1>CORRIENTE</h1>
-      <Box className="breadcrumb">
-        <Breadcrumb
-          routeSegments={[
-            { name: "Charts", path: "/charts" },
-            { name: "Echarts" },
-          ]}
-        />
-      </Box>
+      <h1>NIVEL DE PH</h1>
 
       <Box sx={{ py: "12px" }} />
 

@@ -22,11 +22,17 @@ const ForgotPassword = Loadable(
 const AppEchart = Loadable(
   lazy(() => import("app/views/charts/echarts/LineChart"))
 );
-const AppEchartVoltaje = Loadable(
-  lazy(() => import("app/views/charts/echarts/EchartVoltaje"))
+const AppEchartTemperatura = Loadable(
+  lazy(() => import("app/views/charts/echarts/EchartTemperatura"))
 );
-const AppEchartCorriente = Loadable(
-  lazy(() => import("app/views/charts/echarts/EchartCorriente"))
+const AppEchartHumedad = Loadable(
+  lazy(() => import("app/views/charts/echarts/EchartHumedad"))
+);
+const AppEchartAgua = Loadable(
+  lazy(() => import("app/views/charts/echarts/EchartAgua"))
+);
+const AppEchartPh = Loadable(
+  lazy(() => import("app/views/charts/echarts/EchartPh"))
 );
 // DASHBOARD PAGE
 const Analytics = Loadable(lazy(() => import("app/views/dashboard/Analytics")));
@@ -48,18 +54,23 @@ const routes = [
       },
       // e-chart route
       {
-        path: "/charts/echartsG",
-        element: <AppEchart />,
+        path: "/charts/echartsTemperatura",
+        element: <AppEchartTemperatura />,
         auth: authRoles.editor,
       },
       {
-        path: "/charts/echartsV",
-        element: <AppEchartVoltaje />,
+        path: "/charts/echartsAgua",
+        element: <AppEchartAgua />,
         auth: authRoles.editor,
       },
       {
-        path: "/charts/echartsC",
-        element: <AppEchartCorriente />,
+        path: "/charts/echartsHumedad",
+        element: <AppEchartHumedad />,
+        auth: authRoles.editor,
+      },
+      {
+        path: "/charts/echartsPh",
+        element: <AppEchartPh />,
         auth: authRoles.editor,
       },
     ],
