@@ -45,15 +45,15 @@ export const navigations = [
   //   children: [{ name: "Echarts", path: "/charts/echarts", iconText: "E" }],
   // },
   {
-    name: "Documentación",
-    icon: "launch",
-    type: "extLink",
-    path: "",
-  },
-  {
     name: "Guia",
     icon: "launch",
   
     path: "/Informacion",
+  },
+  {
+    name: "Documentación",
+    icon: "launch",
+    type: "extLink",
+    path: "https://drive.google.com/file/d/136Qpip1BTMl6TJk5baA4H2M_hagJ_1-g/view",
   },
 ];

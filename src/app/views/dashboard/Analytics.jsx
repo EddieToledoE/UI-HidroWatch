@@ -22,7 +22,7 @@ const H4 = styled("h4")(({ theme }) => ({
   fontWeight: "500",
   marginBottom: "16px",
   textTransform: "capitalize",
-  color: theme.palette.text.secondary,
+  color: theme.palette.text.primary,
 }));
 
 const AlertMessage = styled("span")(({ theme }) => ({

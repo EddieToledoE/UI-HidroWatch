@@ -1,23 +1,25 @@
 const textLight = {
+  primary: '#a032a8',
+  secondary: 'rgba(255, 255, 255, 1)', // Aumenté la opacidad para hacerlo un poco más oscuro
+  disabled: 'rgba(255, 255, 255, 1)', // Aumenté la opacidad para hacerlo un poco más oscuro
+  hint: 'rgba(255, 255, 255, 0.7)', // Aumenté la opacidad para hacerlo un poco más oscuro
+};
+
+
+const textDark = {
   primary: 'rgba(52, 49, 76, 1)',
   secondary: 'rgba(52, 49, 76, 0.54)',
   disabled: 'rgba(52, 49, 76, 0.38)',
   hint: 'rgba(52, 49, 76, 0.38)',
 };
 
-const textDark = {
-  primary: '#fff',
-  secondary: 'rgba(255, 255, 255, 0.7)',
-  disabled: 'rgba(255, 255, 255, 0.64)',
-  hint: 'rgba(255, 255, 255, 0.64)',
+const secondaryColor = {
+  light: '#7467ef',
+  main: '#6a75c9',
+  dark: '#222A45',
+  contrastText: textDark.primary,
 };
 
-const secondaryColor = {
-  light: '#f9a352',
-  main: '#ff9e43',
-  dark: '#ff932e',
-  contrastText: textLight.primary,
-};
 const errorColor = {
   main: '#FF3D57',
 };
@@ -28,15 +30,15 @@ export const themeColors = {
       type: 'light',
       primary: {
         main: '#ffffff',
-        contrastText: textLight.primary,
+        contrastText: textDark.primary, // Cambiado a color de texto oscuro para contraste
       },
       secondary: {
         main: '#7467ef',
         contrastText: '#ffffff',
       },
       background: {
-        paper: '#fff',
-        default: '#fafafa',
+        paper: '#222A45', // Cambiado a color de fondo oscuro
+        default: '#1a2038', // Cambiado a color de fondo oscuro
       },
       error: errorColor,
       text: textLight,
@@ -47,15 +49,15 @@ export const themeColors = {
       type: 'light',
       primary: {
         main: '#ffffff',
-        contrastText: textLight.primary,
+        contrastText: textDark.primary, // Cambiado a color de texto oscuro para contraste
       },
       secondary: {
         main: '#1976d2',
         contrastText: '#ffffff',
       },
       background: {
-        paper: '#fff',
-        default: '#fafafa',
+        paper: '#222A45', // Cambiado a color de fondo oscuro
+        default: '#1a2038', // Cambiado a color de fondo oscuro
       },
       text: textLight,
     },
@@ -67,10 +69,7 @@ export const themeColors = {
         main: '#222A45',
         contrastText: '#ffffff',
       },
-      secondary: {
-        main: '#ff9e43',
-        contrastText: textLight.primary,
-      },
+      secondary: secondaryColor,
       error: errorColor,
       background: {
         paper: '#222A45',
@@ -86,10 +85,7 @@ export const themeColors = {
         main: '#1a2038',
         contrastText: '#ffffff',
       },
-      secondary: {
-        main: '#ff9e43',
-        contrastText: textLight.primary,
-      },
+      secondary: secondaryColor,
       error: errorColor,
       background: {
         paper: '#222A45',
@@ -108,8 +104,8 @@ export const themeColors = {
       secondary: secondaryColor,
       error: errorColor,
       background: {
-        paper: '#fff',
-        default: '#fafafa',
+        paper: '#222A45', // Cambiado a color de fondo oscuro
+        default: '#1a2038', // Cambiado a color de fondo oscuro
       },
       text: textLight,
     },
@@ -121,14 +117,11 @@ export const themeColors = {
         main: '#6a75c9',
         contrastText: '#ffffff',
       },
-      secondary: {
-        main: '#ff9e43',
-        contrastText: textLight.primary,
-      },
+      secondary: secondaryColor,
       error: errorColor,
       background: {
-        paper: '#fff',
-        default: '#fafafa',
+        paper: '#222A45', // Cambiado a color de fondo oscuro
+        default: '#1a2038', // Cambiado a color de fondo oscuro
       },
       text: textLight,
     },
@@ -140,10 +133,7 @@ export const themeColors = {
         main: '#7467ef',
         contrastText: '#ffffff',
       },
-      secondary: {
-        main: '#ff9e43',
-        contrastText: textLight.primary,
-      },
+      secondary: secondaryColor,
       error: errorColor,
       background: {
         paper: '#222A45',
@@ -159,10 +149,7 @@ export const themeColors = {
         main: '#6a75c9',
         contrastText: '#ffffff',
       },
-      secondary: {
-        main: '#ff9e43',
-        contrastText: textLight.primary,
-      },
+      secondary: secondaryColor,
       error: errorColor,
       background: {
         paper: '#222A45',
@@ -184,8 +171,8 @@ export const themeColors = {
       },
       error: errorColor,
       background: {
-        paper: '#fff',
-        default: '#fafafa',
+        paper: '#222A45', // Cambiado a color de fondo oscuro
+        default: '#1a2038', // Cambiado a color de fondo oscuro
       },
       text: textLight,
     },
@@ -225,6 +212,7 @@ export const themeColors = {
     },
   },
 };
+
 
 export const themeShadows = [
   'none',

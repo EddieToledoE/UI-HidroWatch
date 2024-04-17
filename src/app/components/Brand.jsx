@@ -17,6 +17,7 @@ const StyledSpan = styled(Span)(({ mode }) => ({
   fontSize: 18,
   marginLeft: ".5rem",
   display: mode === "compact" ? "none" : "block",
+  color: "purple",
 }));
 
 export default function Brand({ children }) {
@@ -34,7 +35,7 @@ export default function Brand({ children }) {
           height="50px"
           style={{ borderRadius: "10px" }}
         />
-        <StyledSpan mode={mode} className="sidenavHoverShow">
+        <StyledSpan mode={mode}  className="sidenavHoverShow">
           HIDROWATCH
         </StyledSpan>
       </Box>

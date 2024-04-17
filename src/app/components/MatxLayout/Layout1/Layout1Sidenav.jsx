@@ -21,9 +21,10 @@ const SidebarNavRoot = styled(Box)(({ theme, width, bg, image }) => ({
   backgroundRepeat: "no-repeat",
   backgroundPosition: "top",
   backgroundSize: "cover",
+  backgroundColor: `rgba(${bg}, 0.96)`,
   zIndex: 111,
   overflow: "hidden",
-  color: theme.palette.text.primary,
+  color: "ffffff",
   transition: "all 250ms ease-in-out",
   backgroundImage: `linear-gradient(to bottom, rgba(${bg}, 0.96), rgba(${bg}, 0.96)), url(${image})`,
   "&:hover": {
@@ -78,7 +79,7 @@ const Layout1Sidenav = () => {
             <Switch
               onChange={handleSidenavToggle}
               checked={leftSidebar.mode !== "full"}
-              color="secondary"
+              color="success"
               size="small"
             />
           </Hidden>

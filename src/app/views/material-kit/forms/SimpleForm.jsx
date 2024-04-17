@@ -5,9 +5,10 @@ import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import axios from "axios"; // Asegúrate de importar axios
 import io from "socket.io-client";
 
-const TextField = styled(TextValidator)(() => ({
+const TextField = styled(TextValidator)(({ theme }) => ({
   width: "100%",
   marginBottom: "16px",
+  color: "#ffffff", // Cambia el color del texto según tu preferencia (por ejemplo, blanco)
 }));
 
 const SimpleForm = () => {

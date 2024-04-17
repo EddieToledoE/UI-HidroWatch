@@ -23,17 +23,16 @@ export default function AppEchart() {
 
   return (
     <Container>
-      <h1>TEMPERATURA</h1>
+      <h1>TEMPERATURA ACTUAL</h1>
 
       <Box sx={{ py: "12px" }} />
 
-      <SimpleCard title="Line Chart">
         <LineChart
-          height="350px"
-          color={[theme.palette.primary.main, theme.palette.primary.light]}
+          height="550px"
+          color={[theme.palette.primary, theme.palette.primary.light]}
         />
 
-      </SimpleCard>
+
 
       <Box sx={{ py: "12px" }} />
 

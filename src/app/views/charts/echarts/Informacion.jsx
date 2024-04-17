@@ -27,7 +27,7 @@ export default function AppEchart() {
 
       <Box sx={{ py: "12px" }} />
 
-      <SimpleCard title="INTRODUCCION a LA HIDROPHONIA">
+      <SimpleCard title="INTRODUCCION a LA HIDROPONIA">
       
 <p>Aumento de rentabilidad: Algunas técnicas hidropónicas permiten aumentar entre un 30% y un 50% la rentabilidad gracias a que permite aprovechar más la superficie de cultivo.
 
