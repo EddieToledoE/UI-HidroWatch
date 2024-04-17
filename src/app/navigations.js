@@ -1,22 +1,23 @@
 export const navigations = [
   { name: "Home", path: "/dashboard/default", icon: "dashboard" },
   // { label: "PAGES", type: "label" },
-  // {
-  //   name: "Session/Auth",
-  //   icon: "security",
-  //   children: [
-  //     { name: "Sign in", iconText: "SI", path: "/session/signin" },
-  //     { name: "Sign up", iconText: "SU", path: "/session/signup" },
-  //     {
-  //       name: "Forgot Password",
-  //       iconText: "FP",
-  //       path: "/session/forgot-password",
-  //     },
-  //     { name: "Error", iconText: "404", path: "/session/404" },
-  //   ],
-  // },
+
   // { label: "Components", type: "label" },
-  { name: "Agregar Edificio", path: "/material/form", iconText: "AE" },
+  { name: "Plantulas", path: "/material/form", iconText: "P" },
+  {
+    name: "Graficas",
+    icon: "chart",
+    children: [
+      { name: "Temperatura", iconText: "T", path: "/session/signin" },
+      { name: "Humedad", iconText: "H", path: "/session/signup" },
+      {
+        name: "Ph",
+        iconText: "PH",
+        path: "/session/forgot-password",
+      },
+      { name: "Agua", iconText: "A", path: "/session/404" },
+    ],
+  },
   // {
   //   name: "Components",
   //   icon: "favorite",

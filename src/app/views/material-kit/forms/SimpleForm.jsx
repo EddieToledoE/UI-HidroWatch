@@ -3,6 +3,7 @@ import { Span } from "app/components/Typography";
 import { useEffect, useState } from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import axios from "axios"; // Asegúrate de importar axios
+import io from "socket.io-client";
 
 const TextField = styled(TextValidator)(() => ({
   width: "100%",
@@ -16,13 +17,32 @@ const SimpleForm = () => {
     seccion: "",
   });
 
+  const [data, setData] = useState({
+    humedad: [],
+    temperatura: [],
+    level_water: [],
+    nivel_ph: [],
+  });
+
   useEffect(() => {
-    ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
-      if (value !== state.password) return false;
-      return true;
+    const socket = io("https://ws-hw.onrender.com"); // Cambia esto por la URL de tu servidor WebSocket
+    socket.on("IncomingData", (msg) => {
+      const { user, humedad, temperatura, level_water, nivel_ph } = JSON.parse(
+        msg.message
+      );
+      setData((prevData) => ({
+        ...prevData,
+        humedad: [...prevData.humedad, humedad],
+        temperatura: [...prevData.temperatura, temperatura],
+        level_water: [...prevData.level_water, level_water],
+        nivel_ph: [...prevData.nivel_ph, nivel_ph],
+      }));
     });
-    return () => ValidatorForm.removeValidationRule("isPasswordMatch");
-  }, [state.password]);
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
@@ -54,18 +74,17 @@ const SimpleForm = () => {
           <Grid item lg={6} md={6} sm={12} xs={12} sx={{ mt: 2 }}>
             <TextField
               type="text"
-              name="ubicacion"
-              id="standard-basic"
+              name="nombre"
               value={ubicacion}
               onChange={handleChange}
               errorMessages={["Este campo es obligatorio"]}
-              label="Ubicacion"
+              label="Nombre"
             />
 
             <TextField
-              type="text"
-              name="nombre"
-              label="Nombre del Edificio"
+              type="number"
+              name="cantidad"
+              label="Cantidad de plantulas"
               onChange={handleChange}
               value={nombre}
               validators={["required"]}
@@ -73,14 +92,15 @@ const SimpleForm = () => {
             />
 
             <TextField
-              type="number"
-              name="seccion"
-              label="Sección"
+              type="date"
+              name="fecha de siembra"
+              label="Fecha de siembra"
               value={seccion}
               onChange={handleChange}
               validators={["required"]}
               errorMessages={["Este campo es obligatorio"]}
             />
+
           </Grid>
         </Grid>
 

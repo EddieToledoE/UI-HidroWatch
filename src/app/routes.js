@@ -20,7 +20,7 @@ const ForgotPassword = Loadable(
 );
 // E-CHART PAGE
 const AppEchart = Loadable(
-  lazy(() => import("app/views/charts/echarts/EchartTemperatura"))
+  lazy(() => import("app/views/charts/echarts/LineChart"))
 );
 const AppEchartVoltaje = Loadable(
   lazy(() => import("app/views/charts/echarts/EchartVoltaje"))
@@ -48,7 +48,7 @@ const routes = [
       },
       // e-chart route
       {
-        path: "/charts/echarts",
+        path: "/charts/echartsG",
         element: <AppEchart />,
         auth: authRoles.editor,
       },

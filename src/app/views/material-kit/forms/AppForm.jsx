@@ -17,18 +17,13 @@ const Container = styled("div")(({ theme }) => ({
 export default function AppForm() {
   return (
     <Container>
-      <h1>AGREGAR EDIFICIO</h1>
+      <h1>Registrar Plantulas</h1>
       <Box className="breadcrumb">
-        <Breadcrumb
-          routeSegments={[
-            { name: "Material", path: "/material" },
-            { name: "Form" },
-          ]}
-        />
+       
       </Box>
 
       <Stack spacing={3}>
-        <SimpleCard title="Crear Edificio">
+        <SimpleCard title="Registrar Plantulas">
           <SimpleForm />
         </SimpleCard>
       </Stack>

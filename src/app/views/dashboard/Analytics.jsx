@@ -1,14 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
 import { Card, Grid, styled, useTheme } from "@mui/material";
-import RowCards from "./shared/RowCards";
-import StatCards from "./shared/StatCards";
-import Campaigns from "./shared/Campaigns";
-import StatCards2 from "./shared/StatCards2";
 import LineChart from "../charts/echarts/LineChart";
-import UpgradeCard from "./shared/UpgradeCard";
-import TopSellingTable from "./shared/TopSellingTable";
 import io from "socket.io-client";
-
+import Campaigns from "./shared/Campaigns";
 // STYLED COMPONENTS
 const ContentBox = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -22,11 +16,6 @@ const Title = styled("span")(() => ({
   textTransform: "capitalize",
 }));
 
-const SubTitle = styled("span")(({ theme }) => ({
-  fontSize: "0.875rem",
-  color: theme.palette.text.secondary,
-}));
-
 const H4 = styled("h4")(({ theme }) => ({
   fontSize: "1rem",
   fontWeight: "500",
@@ -38,35 +27,28 @@ const H4 = styled("h4")(({ theme }) => ({
 export default function Analytics() {
   const { palette } = useTheme();
 
-  const socket = io("http://localhost:5555"); // Asegúrate de cambiar la URL por la de tu servidor WebSocket.
-
-  const [data, setData] = useState({
-    voltaje: "",
-    temperatura: "",
-    corriente: "",
+  const socket = io("https://ws-hw.onrender.com"); // Asegúrate de cambiar la URL por la de tu servidor WebSocket.
+  const [latestData, setLatestData] = useState({
+    humedad: null,
+    temperatura: null,
+    level_water: null,
+    nivel_ph: null,
   });
 
   useEffect(() => {
+    const socket = io("https://ws-hw.onrender.com"); // Cambia esto por la URL de tu servidor WebSocket
     socket.on("IncomingData", (msg) => {
-      const { topic, message } = msg;
-
-      switch (topic) {
-        case "casa/voltaje":
-          setData((prev) => ({ ...prev, voltaje: message }));
-          break;
-        case "casa/temperatura":
-          setData((prev) => ({ ...prev, temperatura: message }));
-          break;
-        case "casa/corriente":
-          setData((prev) => ({ ...prev, corriente: message }));
-          break;
-        default:
-          console.log("Topic not recognized:", topic);
-      }
+      const { user, humedad, temperatura, level_water, nivel_ph } = JSON.parse(msg.message);
+      setLatestData({
+        humedad,
+        temperatura,
+        level_water,
+        nivel_ph,
+      });
     });
 
     return () => {
-      socket.off("IncomingData");
+      socket.disconnect();
     };
   }, []);
 
@@ -78,19 +60,20 @@ export default function Analytics() {
             <H4>Graficos en tiempo real</H4>
             <LineChart height="550px" />
             {/* Mostrando datos */}
-            <H4>Humedad: {data.voltaje}%</H4>
-            <H4>Temperatura: {data.temperatura}°C</H4>
-            <H4>Nivel de Ph: {data.corriente}</H4>
-            <H4>Nivel de Agua: {data.corriente}</H4>
+
           </Grid>
 
           <Grid item lg={4} md={4} sm={12} xs={12}>
             <Card sx={{ px: 3, py: 2, mb: 3 }}>
-              <Title>Plantulas Actuales</Title>
+              <Title>Metricas</Title>
+            <H4>Humedad: {latestData.humedad ?? 'Cargando...'}%</H4>
+            <H4>Temperatura: {latestData.temperatura ?? 'Cargando...'}°C</H4>
+            <H4>Nivel de Ph: {latestData.nivel_ph ?? 'Cargando...'}</H4>
+            <H4>Nivel de Agua: {latestData.level_water ?? 'Cargando...'}</H4>
             </Card>
-
-            <UpgradeCard />
+            <Card sx={{ px: 3, py: 2, mb: 3 }}>
             <Campaigns />
+            </Card>
           </Grid>
         </Grid>
       </ContentBox>
