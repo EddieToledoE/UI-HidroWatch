@@ -55,9 +55,6 @@ const initialValues = {
 
 // form field validation schema
 const validationSchema = Yup.object().shape({
-  password: Yup.string()
-    .min(6, "Password must be 6 character length")
-    .required("Password is required!"),
   email: Yup.string()
     .email("Invalid Email address")
     .required("Email is required!"),
@@ -90,7 +87,10 @@ export default function JwtLogin() {
                 src="/assets/images/logos/LogoH.png"
                 width="100%"
                 alt=""
-                style={{ borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)"}}
+                style={{
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                }}
               />
             </div>
           </Grid>
@@ -159,7 +159,6 @@ export default function JwtLogin() {
 
                         <Paragraph sx={{ color: "#fff" }}>Recuerdame</Paragraph>
                       </FlexBox>
-
                     </FlexBox>
 
                     <LoadingButton
@@ -171,19 +170,6 @@ export default function JwtLogin() {
                     >
                       Iniciar sesion
                     </LoadingButton>
-
-                    <Paragraph sx={{ color: "#fff" }}>
-                      ¿Tiene una cuenta?
-                      <NavLink
-                        to="/session/signup"
-                        style={{
-                          color: "#fff",
-                          marginLeft: 5,
-                        }}
-                      >
-                        Registrate
-                      </NavLink>
-                    </Paragraph>
                   </form>
                 )}
               </Formik>

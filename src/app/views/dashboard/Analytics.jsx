@@ -4,6 +4,7 @@ import LineChart from "../charts/echarts/LineChart";
 import io from "socket.io-client";
 import Campaigns from "./shared/Campaigns";
 import TopSellingTable from "./shared/TopSellingTable";
+
 // STYLED COMPONENTS
 const ContentBox = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -47,7 +48,9 @@ export default function Analytics() {
   useEffect(() => {
     const socket = io("https://ws-hw.onrender.com"); // Cambia esto por la URL de tu servidor WebSocket
     socket.on("IncomingData", (msg) => {
-      const { user, humedad, temperatura, level_water, nivel_ph } = JSON.parse(msg.message);
+      const { user, humedad, temperatura, level_water, nivel_ph } = JSON.parse(
+        msg.message
+      );
       setLatestData({
         humedad,
         temperatura,
@@ -82,23 +85,23 @@ export default function Analytics() {
             <Card sx={{ px: 3, py: 2, mb: 3 }}>
               <Title>Metricas</Title>
               <H4>
-                Humedad: {latestData.humedad ?? 'Cargando...'}%{" "}
+                Humedad: {latestData.humedad ?? "Cargando..."}%{" "}
                 {renderAlertMessage(latestData.humedad, 50, 70)}
               </H4>
               <H4>
-                Temperatura: {latestData.temperatura ?? 'Cargando...'}°C{" "}
+                Temperatura: {latestData.temperatura ?? "Cargando..."}°C{" "}
                 {renderAlertMessage(latestData.temperatura, 20, 35)}
               </H4>
               <H4>
-                Nivel de Ph: {latestData.nivel_ph ?? 'Cargando...'}{" "}
+                Nivel de Ph: {latestData.nivel_ph ?? "Cargando..."}{" "}
                 {renderAlertMessage(latestData.nivel_ph, 5, 7)}
               </H4>
               <H4>
-                Nivel de Agua: {latestData.level_water ?? 'Cargando...'}{" "}
+                Nivel de Agua: {latestData.level_water ?? "Cargando..."}{" "}
                 {renderAlertMessage(latestData.level_water, 300, 599)}
               </H4>
             </Card>
-            <Card sx={{ px: 3, py: 2, mb: 3  }}>
+            <Card sx={{ px: 3, py: 2, mb: 3 }}>
               <H4>PLANTULAS</H4>
               <TopSellingTable />
             </Card>

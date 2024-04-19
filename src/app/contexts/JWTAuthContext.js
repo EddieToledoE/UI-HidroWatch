@@ -62,11 +62,14 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (correo, nombre, contrasena) => {
-    const response = await axios.post("http://localhost:4000/usuarios/one", {
-      correo,
-      nombre,
-      contrasena,
-    });
+    const response = await axios.post(
+      `${opt.protocol}://${opt.host}:${opt.port}/usuarios/one`,
+      {
+        correo,
+        nombre,
+        contrasena,
+      }
+    );
     const { user } = response.data;
 
     dispatch({ type: "REGISTER", payload: { user } });
